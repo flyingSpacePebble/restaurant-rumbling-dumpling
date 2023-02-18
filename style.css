@@ -1,0 +1,867 @@
+/* ************************ */
+/* HEADER */
+/* ************************ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #fdeee7; */
+
+  height: 9.6rem;
+  padding: 0 4.8rem;
+
+  /* In relation to .main-nav nav bar's absolute position */
+  /* Normally, below doesn't do anything; only when mobile nav applies, below becomes applicable */
+  position: relative;
+}
+
+.logo {
+  height: 6rem;
+}
+
+/* ************************ */
+/* NAVIGATION */
+/* ************************ */
+
+/* ul element - set it to be flex container */
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #ba470a;
+}
+
+.nav-cta:link,
+.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e8590c;
+}
+
+.nav-cta:hover,
+.nav-cta:active {
+  background-color: #ba470a;
+}
+
+/* ////////////////////// */
+/* FOR MOBILE */
+
+/* button */
+/* By default, this button should be hidden, only show when viewport is reduced to mobile */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+/* Use attribute for CSS selector - The 'close' icon; Not showing by default */
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* ////////////////////// */
+/* FOR STICKY NAVIGATION */
+/* 'sticky' class is added to 'body' element using Javascript when hero section leaves the viewport */
+/* Below format will be applied to 'header' element when sticky class is added to 'body' element, since every element is a child of body element */
+.sticky .header {
+  /* position fixed: element will always be at fixed position with respect to viewport regardless of how viewport scrolls */
+  /* Fixed means the element is taken out of the flow, so next element takes its original place */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem; /* set fixed height so in JS intersectionObserver the rootMargin of -80px can be applied*/
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.966);
+  z-index: 99; /* z-index should be Less than mobile button */
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+/* Below format will be applied to 'section-hero' element when 'sticky' class is added to 'body' element, since every element is a child of body element */
+/* To ensure smooth appearance of sticky navigation (since header is now fixed so taken out of flow, we need to compensate it by adding margin to the hero-section */
+.sticky .section-hero {
+  /* Set it as the same value as the header height */
+  margin-top: 9.6rem;
+}
+
+/* ************************ */
+/* HERO SECTION */
+/* ************************ */
+
+.section-hero {
+  background-color: #fdeee7;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+/* The grid container */
+.hero {
+  max-width: 130rem;
+  /* centering the element */
+  margin: 0 auto;
+  padding: 2.4rem 4.8rem;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  gap: 9.6rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img-box {
+  /* background-color: aqua; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 1.2rem;
+  /* row-gap: 2.6rem; */
+}
+
+.hero-img {
+  border-radius: 7px;
+  box-shadow: 0 2.4rem 4.8rem rgb(46, 18, 2, 0.05);
+}
+
+/* Gyoza */
+.hero-img--1 {
+  width: 100%;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  /* align-self: end; */
+}
+
+/* raw */
+.hero-img--2 {
+  width: 100%;
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  align-self: end;
+}
+
+/* soup */
+.hero-img--3 {
+  width: 100%;
+  grid-row: 2 / 4;
+  grid-column: 1 / 2;
+}
+
+/* spicy */
+.hero-img--4 {
+  width: 100%;
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+}
+
+.delivered-meals {
+  display: flex;
+  margin-top: 8rem;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  /* Use margin-right negative value for overlap */
+  margin-right: -1.2rem;
+  border: 3px solid #fdeee7;
+}
+
+/* Make sure the last child doesn't have a right margin, otherwise format gets messed up */
+.delivered-imgs img:last-child {
+  margin-right: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  font-weight: 700;
+  color: #d1500b;
+}
+
+/* ************************ */
+/* FEATURED IN SECTION */
+/* ************************ */
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+/* "As featured in" */
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+}
+
+/* logo container */
+.featured-logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* logos */
+.featured-logo {
+  /* height: 3.2rem; */
+  width: 12rem;
+  /* TEMP below: Change brightness to 0 when good logos are found */
+  filter: brightness(0);
+  /* brightness 0 turns img to black */
+  opacity: 30%;
+  /* Img fades 50%, but seems like it's gray */
+  /* This is better than grayscale here cuz now the img has the uniform 'gray' color */
+}
+
+/* ************************ */
+/* HOW IT WORKS SECTION */
+/* ************************ */
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* This is an empty div, so have to set height 100% to pop it open (100% means 100% of the grid cell's height) */
+.step-img-box {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Use size, repeat, position 3 properties to ensure a non-repeated image is set as background centered */
+.step-img-box-1 {
+  background-image: url("img/icons/dumpling1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.step-img-box-2 {
+  background-image: url("img/icons/carrot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.step-img-box-3 {
+  background-image: url("img/icons/dumpling.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ************************ */
+/* RECIPES SECTION */
+/* ************************ */
+
+.section-recipe {
+  padding: 9.6rem 0;
+  background-color: #fdeee7;
+}
+
+/* Recipe card */
+.recipe {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s;
+  background-color: #fff;
+}
+
+/* Add hover effect to recipe element */
+.recipe:hover {
+  /* translateY only moves the element in Y direction, negative means up */
+  transform: translateY(-1.2rem);
+  /* When element moves up, shadow should be bigger/darker, as it's closer to the 'light source' */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.recipe-img {
+  width: 100%;
+}
+
+/* Recipe description */
+.recipe-content {
+  padding: 3.2rem 4.8rem 4rem 4.8rem;
+}
+
+/* tags box */
+.recipe-tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.tag--pork {
+  background-color: #ff922b;
+}
+
+.tag--vegetable {
+  background-color: #51cf66;
+}
+
+.recipe-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 2.8rem;
+}
+
+/* ul list */
+.recipe-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* gap applied vertically */
+  list-style: none;
+}
+
+/* List item */
+.recipe-attribute {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+/* ion icons */
+.recipe-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e8590c;
+}
+
+/* box that contains the Learn more button in recipe */
+.recipe-btn-box {
+  margin-top: 3.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+/* See btn--recipe formatting in general.css */
+
+/* 'See all recipes' link anchor */
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* ************************ */
+/* TESTIMONIALS SECTION */
+/* ************************ */
+
+.section-testimonials {
+  /* background-color: #fdeee7; */
+  padding: 9.6rem;
+}
+
+/* testimonials grid */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4.8rem;
+  align-items: center;
+}
+
+/* testimonial figure
+.testimonial {
+} */
+
+.testimonial-img {
+  width: 7.2rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+/* ************************ */
+/* KITCHEN SECTION */
+/* ************************ */
+
+.section-kitchen {
+  /* background-color: #2e1202; */
+  /* background-color: #fdeee7; */
+  /* color: #fff; */
+  padding: 6.8rem;
+}
+
+.container--kitchen--all {
+  padding: 4.8rem 4.8rem 4.8rem 3.2rem;
+
+  background-image: linear-gradient(rgb(46, 18, 2, 0.5), rgb(23, 9, 1, 0.9)),
+    url(img/kitchen-2300px-mozJpeg.jpg);
+  background-size: cover;
+  height: 100%;
+  border-radius: 9px;
+  box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 20%);
+
+  display: grid;
+  grid-template-columns: 1.45fr 2fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+.kitchen--heading {
+  grid-column: 2 / -1;
+  text-align: end;
+}
+
+.kitchen--content {
+  grid-column: 2 / -1;
+  text-align: end;
+  align-self: end;
+
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 2;
+  color: #ccc;
+}
+
+.chef-quote {
+  margin-bottom: 3.2rem;
+  letter-spacing: 0.1px;
+}
+
+.chef-title {
+  font-weight: 400;
+  color: #aaa;
+  line-height: 1.2;
+}
+
+.chef-name {
+  font-weight: 500;
+  color: #aaa;
+}
+
+/* ************************ */
+/* PRICING SECTION */
+/* ************************ */
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+/* Pricing card */
+.pricing-card {
+  border-radius: 11px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.035);
+  /* width: 75%; */
+  padding: 4.8rem;
+  transition: all 0.4s;
+}
+
+/* Add hover effect to pricing card element */
+.pricing-card:hover {
+  /* translateY only moves the element in Y direction, negative means up */
+  transform: translateY(-1.2rem);
+  /* When element moves up, shadow should be bigger/darker, as it's closer to the 'light source' */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.065);
+}
+
+/* First Pricing card */
+.pricing-card--one {
+  border: 2px solid #fdeee7;
+}
+
+/* Second Pricing card */
+.pricing-card--five {
+  border: 2px solid #fdeee7;
+
+  /* background-color: #fdeee7; */
+
+  /* For pseduco element below */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Most Popular band for second pricing card */
+.pricing-card--five::after {
+  content: "Most Popular";
+  position: absolute;
+  /* Use % for responsive design */
+  top: 6%;
+  right: -26%;
+
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffd43b;
+  padding: 0.6rem 8rem;
+  transform: rotate(45deg);
+}
+
+/* Third Pricing card */
+.pricing-card--twenty {
+  border: 2px solid #fdeee7;
+
+  background-color: #fdeee7;
+
+  /* For pseduco element below */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Best value band for second pricing card */
+.pricing-card--twenty::after {
+  content: "Best value";
+  position: absolute;
+  /* Use % for responsive design */
+  top: 6%;
+  right: -24%;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffd43b;
+  padding: 0.6rem 8rem;
+  transform: rotate(45deg);
+}
+
+.package-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.package-name {
+  color: #d1500b;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75;
+  margin-bottom: 3.2rem;
+}
+
+.package-price {
+  font-size: 5.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+
+.package-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.package-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+
+/* ul element */
+.list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  line-height: 1.4;
+}
+
+/* li element */
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+/* ion icons */
+.list-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #e8590c;
+}
+
+/* Div for pricing CTA button */
+.pricing-btn {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+
+.package-note {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ************************ */
+/* CTA SECTION */
+/* ************************ */
+
+.section-cta {
+  /* top right bottom left */
+  padding: 4.8rem 0 12.8rem 0;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #e8590c;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  overflow: hidden;
+
+  background-image: linear-gradient(to right bottom, #f6bd9e, #e8590c);
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #2e1202;
+}
+
+/* Explicitly define margin-bottom: reduce it */
+.cta .heading-secondary {
+  /* Standard is 9.6rem, so reduce */
+  margin-bottom: 3.2rem;
+  /* Inherits cta-text-box text color */
+  color: inherit;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-form label {
+  /* Make sure it takes one line, not inline */
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+
+  /* Explicitly specify 'inherit' as form elements don't inherit parent value by default */
+  font-family: inherit;
+  color: inherit;
+
+  border: none;
+  background-color: #fdeee7;
+  border-radius: 9px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Pseudo element selector */
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(246, 189, 158, 0.35),
+      rgb(232, 89, 12, 0.35)
+    ),
+    url("img/CTA-img-770px.jpg");
+
+  background-size: cover;
+  /* background-position is useful when img is much larger than the container size, then top/bottom/center will set the img to be displaying in the limited container accordingly */
+  background-position: center;
+}
+
+/* Select the focus state of all elements under .cta */
+/* Below overwrites the focus state format in general (due to higher specificity) */
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.6rem rgba(253, 242, 233, 0.5);
+}
+
+/* ************************ */
+/* FOOTER SECTION */
+/* ************************ */
+
+/* Section footer */
+.footer {
+  padding: 12.8rem 0;
+  /* Light border for seperation from main section */
+  border-top: 1px solid #eee;
+
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  column-gap: 4.8rem;
+}
+
+/* Logo column */
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo img anchor */
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+/* Logo img */
+.footer-logo-img {
+  height: 5.4rem;
+}
+
+/* ul element for social icons */
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+/* ion icons */
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+/* copyright message */
+.copyright {
+  font-size: 1.4rem;
+  color: #767676;
+  line-height: 1.6;
+  /* NOTE: Below will move the flex item to the bottom of the flex container */
+  margin-top: auto;
+}
+
+/* Footer headings */
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+/* Address element: by default text is italic */
+.contacts {
+  /* Change italic back to normal font */
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address-col,
+.nav-col {
+  padding: 1.6rem 0;
+}
+
+/* Actual address <p> */
+.address {
+  margin-bottom: 2.4rem;
+}
+
+/* ul element for footer links in nav col */
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* footer link (anchor element inside li) */
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}

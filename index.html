@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Always Include this line for responsive design!! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta description -->
+    <meta
+      name="description"
+      content="Rumbling Dumpling is the most famous dumpling takeout shop in the Los Angeles region. Customers can order Rumbling Dumpling directly from the website. There are various product options to choose from, guaranteed fresh and delicious!"
+    />
+
+    <!-- icon in title - 64 by 64 -->
+    <link rel="icon" href="img/favicon_square_64.png" />
+
+    <!-- icon for iOS homescreen as favorited website 180 by 180 -->
+    <link rel="apple-touch-icon" href="img/favicon_square_180_for_iOS.png" />
+
+    <!-- icon for Android homescreen as favorited website - create manifest.webmanifest file -->
+    <!-- NOTE in the manifest.webmanifest file, specify the imgs sizes as 512 by 512, and 192 by 192 -->
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <!-- OK to include multiple CSS files into one HTML -->
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
+    <!-- JavaScript -->
+    <script defer src="script.js"></script>
+
+    <!-- To enable smooth scrolling for safari, need below -->
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+    "
+    ></script>
+
+    <title>Rumbling Dumpling &mdash; Get your favorite dumplings!</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#">
+        <img class="logo" alt="rumbling dumpling logo" src="img/Logo2.1.png" />
+      </a>
+      <!-- main-nav will be changed in mobile navigation -->
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a href="#how" class="main-nav-link">How it works</a></li>
+          <li><a href="#recipe" class="main-nav-link">Recipe Options</a></li>
+          <li>
+            <a href="#testimonials" class="main-nav-link">Testimonials</a>
+          </li>
+          <li><a href="#pricing" class="main-nav-link">Pricing</a></li>
+          <li><a href="#cta" class="main-nav-link nav-cta">Order Now</a></li>
+        </ul>
+      </nav>
+
+      <!-- Used for mobile screens -->
+      <!-- By default, below is hidden, only appear when media query hits mobile navigation width -->
+      <button class="btn-mobile-nav">
+        <!-- Two icons in the same button, but only one is shown at one time -->
+        <!-- 'name' is attribute -->
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <!-- Section Hero -->
+      <section class="section-hero">
+        <!-- Grid container -->
+        <div class="hero">
+          <!-- Hero messages on the left side -->
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              Hand-made dumplings delivered to your door
+            </h1>
+            <p class="hero-description">
+              Delicious and nutritious, our award-winning dumplings are made
+              from home-grown organic ingredients.
+            </p>
+            <a href="#cta" class="btn btn--cta margin-right-sm">Order Now</a>
+            <a href="#how" class="btn btn--more">Learn more &darr;</a>
+            <!-- Delivered dumplings text and img -->
+            <div class="delivered-meals">
+              <div class="delivered-imgs">
+                <img src="img/Headshots/01.jpg" alt="Customer photo" />
+                <img src="img/Headshots/22.jpg" alt="Customer photo" />
+                <img src="img/Headshots/32.jpg" alt="Customer photo" />
+                <img src="img/Headshots/79.jpg" alt="Customer photo" />
+                <img src="img/Headshots/95.jpg" alt="Customer photo" />
+                <img src="img/Headshots/99.jpg" alt="Customer photo" />
+              </div>
+              <p class="delivered-text">
+                <span>200,000+</span> dumplings delivered!
+              </p>
+            </div>
+          </div>
+          <!-- Images on the right side -->
+          <div class="hero-img-box">
+            <img
+              src="img/dumpling1-420px.png"
+              class="hero-img hero-img--1"
+              alt="Dumpling"
+            />
+            <img
+              src="img/dumpling2-450.png"
+              class="hero-img hero-img--2"
+              alt="Dumpling"
+            />
+            <img
+              src="img/dumpling-3-450-squooshed.jpg"
+              class="hero-img hero-img--3"
+              alt="Dumpling"
+            />
+            <img
+              src="img/dumpling-4-450-squooshed.jpg"
+              class="hero-img hero-img--4"
+              alt="Dumpling"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Featured -->
+      <section class="section-featured">
+        <div class="container"></div>
+        <h2 class="heading-featured-in">As featured in</h2>
+        <div class="featured-logos">
+          <img
+            src="img/featured logos/facebook-5.svg"
+            class="featured-logo"
+            alt="facebook logo"
+          />
+          <img
+            src="img/featured logos/uber-eats.svg"
+            class="featured-logo"
+            alt="Food network logo"
+          />
+          <img
+            src="img/featured logos/instagram-1.svg"
+            class="featured-logo"
+            alt="Instagram logo"
+          />
+          <img
+            src="img/featured logos/grubhub-1.svg"
+            class="featured-logo"
+            alt="Food network logo"
+          />
+          <img
+            src="img/featured logos/doordash-logo.svg"
+            class="featured-logo"
+            alt="Food network logo"
+          />
+        </div>
+      </section>
+
+      <!-- Section How It Works  -->
+      <section class="section-how" id="how">
+        <!-- section heading -->
+        <div class="container">
+          <span class="subheading">How it works</span>
+          <h2 class="heading-secondary">
+            Enjoy your favorite dumplings in 3 simple steps
+          </h2>
+        </div>
+
+        <!-- Container for steps -->
+        <div class="container grid grid--2-cols grid--center-v">
+          <!-- Step 1 -->
+          <!-- Step 1 - Order -->
+          <div class="step-text-box">
+            <p class="step-number">1</p>
+            <h3 class="heading-tertiary">Select what you like and order</h3>
+            <p class="step-description">
+              Ordering Rumbling Dumpling has never been easier: Just click on
+              'Order Now' button on any device of your preference, choose your
+              favorite dumpling type and desired delivery time, and leave the
+              rest to us!
+            </p>
+          </div>
+          <!-- Step 1 - Image -->
+          <!-- NOTE: empty div, only background img -->
+          <!-- NOTE: Make sure to add role and aria-babel for empty div -->
+          <div
+            class="step-img-box step-img-box-1"
+            role="img"
+            aria-label="step img background"
+          ></div>
+
+          <!-- Step 2 -->
+          <!-- Step 2 - Image -->
+          <!-- NOTE: empty div, only background img -->
+          <!-- NOTE: Make sure to add role and aria-babel for empty div -->
+          <div
+            class="step-img-box step-img-box-2"
+            role="img"
+            aria-label="step img background"
+          ></div>
+
+          <!-- Step 2 - Prepare & Deliver -->
+          <div class="step-text-box">
+            <p class="step-number">2</p>
+            <h3 class="heading-tertiary">
+              We make it and deliver to your door
+            </h3>
+            <p class="step-description">
+              Upon receiving your order, our kitchen will prepare your dumplings
+              with fresh organic ingredients. We will then deliver the
+              ready-made dumplings to your door at your convenience.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <!-- Step 3 - Receive & Cook -->
+          <div class="step-text-box">
+            <p class="step-number">3</p>
+            <h3 class="heading-tertiary">Receive, Fast-prep, and Enjoy!</h3>
+            <p class="step-description">
+              Upon receiving the package, just follow our award-winning
+              Fast-prep&copy; recipe to prep and enjoy Rumbling Dumpling! If you
+              are short on time, just freeze up the package for later use, it'll
+              stay fresh for weeks in your freezer.
+            </p>
+          </div>
+          <!-- Step 3 - Image -->
+          <!-- NOTE: empty div, only background img -->
+          <!-- NOTE: Make sure to add role and aria-babel for empty div -->
+          <div
+            class="step-img-box step-img-box-3"
+            role="img"
+            aria-label="step img background"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Section Recipe -->
+      <section class="section-recipe" id="recipe">
+        <!-- Heading segment -->
+        <!-- Center-text (helper function) the container and span/h2 element will also inherit the centered property for text -->
+        <div class="container center-text">
+          <span class="subheading">Recommended Recipes</span>
+          <h2 class="heading-secondary">Check out our most popular recipes</h2>
+        </div>
+
+        <!-- Recipe cards segment -->
+        <!-- Note below 'margin-bottom-md' class is a helper class that adds a margin-bottom -->
+        <div class="container grid grid--3-cols margin-bottom-md">
+          <!-- First recipe card -->
+          <div class="recipe">
+            <!-- Recipe image -->
+            <img
+              src="img/recipe1-700px-squooshed.jpg"
+              class="recipe-img"
+              alt="Steamed Dumpling"
+            />
+            <!-- Recipe Description -->
+            <div class="recipe-content">
+              <!-- Have tags for products: Good practice -->
+              <div class="recipe-tags">
+                <span class="tag tag--pork">Pork</span>
+                <span class="tag tag--vegetable">Vegetable</span>
+              </div>
+              <!-- recipe card title -->
+              <p class="recipe-title">Steamed Dumpling</p>
+              <!-- recipe attribute list -->
+              <ul class="recipe-attributes">
+                <li class="recipe-attribute">
+                  <ion-icon class="recipe-icon" name="flame-outline"></ion-icon
+                  ><span><strong>15</strong> min prep time</span>
+                </li>
+                <li class="recipe-attribute">
+                  <ion-icon
+                    class="recipe-icon"
+                    name="restaurant-outline"
+                  ></ion-icon
+                  ><span><strong>5.0</strong> rating (215)</span>
+                </li>
+                <li class="recipe-attribute">
+                  <ion-icon class="recipe-icon" name="star-outline"></ion-icon
+                  ><span><strong>620</strong> Calories</span>
+                </li>
+              </ul>
+              <!-- Recipe detail button box -->
+              <div class="recipe-btn-box">
+                <!-- Recipe detail button -->
+                <a href="#" class="btn btn--recipe">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second recipe card -->
+          <div class="recipe">
+            <!-- Recipe image -->
+            <img
+              src="img/recipe2-700px-squooshed.jpg"
+              class="recipe-img"
+              alt="Fried Dumpling"
+            />
+            <!-- Recipe Description -->
+            <div class="recipe-content">
+              <!-- Have tags for products: Good practice -->
+              <div class="recipe-tags">
+                <span class="tag tag--pork">Pork</span>
+                <span class="tag tag--vegetable">Vegetable</span>
+              </div>
+              <!-- recipe card title -->
+              <p class="recipe-title">Fried Dumpling</p>
+              <!-- recipe attribute list -->
+              <ul class="recipe-attributes">
+                <li class="recipe-attribute">
+                  <ion-icon class="recipe-icon" name="flame-outline"></ion-icon
+                  ><span><strong>12</strong> min prep time</span>
+                </li>
+                <li class="recipe-attribute">
+                  <ion-icon
+                    class="recipe-icon"
+                    name="restaurant-outline"
+                  ></ion-icon
+                  ><span><strong>5.0</strong> rating (387)</span>
+                </li>
+                <li class="recipe-attribute">
+                  <ion-icon class="recipe-icon" name="star-outline"></ion-icon
+                  ><span><strong>720</strong> Calories</span>
+                </li>
+              </ul>
+              <!-- Recipe detail button box -->
+              <div class="recipe-btn-box">
+                <!-- Recipe detail button -->
+                <a href="#" class="btn btn--recipe">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third recipe card -->
+          <div class="recipe">
+            <!-- Recipe image -->
+            <img
+              src="img/recipe3-700px-squooshed.jpg"
+              class="recipe-img"
+              alt="Boiled Dumpling"
+            />
+            <!-- Recipe Description -->
+            <div class="recipe-content">
+              <!-- Have tags for products: Good practice -->
+              <div class="recipe-tags">
+                <span class="tag tag--vegetable">Vegetable</span>
+              </div>
+              <!-- recipe card title -->
+              <p class="recipe-title">Baked Dumpling</p>
+              <!-- recipe attribute list -->
+              <ul class="recipe-attributes">
+                <li class="recipe-attribute">
+                  <ion-icon class="recipe-icon" name="flame-outline"></ion-icon
+                  ><span><strong>18</strong> min prep time</span>
+                </li>
+                <li class="recipe-attribute">
+                  <ion-icon
+                    class="recipe-icon"
+                    name="restaurant-outline"
+                  ></ion-icon
+                  ><span><strong>5.0</strong> rating (112)</span>
+                </li>
+                <li class="recipe-attribute">
+                  <ion-icon class="recipe-icon" name="star-outline"></ion-icon
+                  ><span><strong>560</strong> Calories</span>
+                </li>
+              </ul>
+              <!-- Recipe detail button box -->
+              <div class="recipe-btn-box">
+                <!-- Recipe detail button -->
+                <a href="#" class="btn btn--recipe">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- See All Recipe Segment -->
+        <div class="container all-recipes">
+          <a href="#" class="link">See all recipes &rarr;</a>
+        </div>
+      </section>
+
+      <!-- Section Testimonials -->
+      <section class="section-testimonials" id="testimonials">
+        <!-- Testimonial headings -->
+        <div class="container">
+          <span class="subheading">Testimonials</span>
+          <h2 class="heading-secondary">
+            Hear from our customers across the country
+          </h2>
+        </div>
+
+        <!-- Testimonials content grid -->
+        <div class="container testimonials">
+          <!-- Individual testimonials for each figure -->
+          <!-- Figure 1 -->
+          <figure class="testimonial">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/22.jpg"
+            />
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Healthy and great-tasting dumplings! It makes my day every time.
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; David Smith</p>
+          </figure>
+
+          <!-- Figure 2 -->
+          <figure class="testimonial">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/79.jpg"
+            />
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Rumbling has the most amazing dumpling in town, a must try!
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; Heather Golden</p>
+          </figure>
+
+          <!-- Figure 3 -->
+          <figure class="testimonial">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/32.jpg"
+            />
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Hands down the best dumplings I've ever tasted.
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; Adrian Petes</p>
+          </figure>
+
+          <!-- Figure 4 -->
+          <figure class="testimonial">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/01.jpg"
+            />
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Steamed dumplings are my favorite soul food. Rumbling is the real
+              deal!
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; Joseph Lerouf</p>
+          </figure>
+
+          <!-- Figure 5 -->
+          <figure class="testimonial">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/8.jpg"
+            />
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Rumbling Dumpling reminds me of my grandma's homemade flavor, but
+              better!
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; Anna Chow</p>
+          </figure>
+
+          <!-- Figure 6 -->
+          <figure class="testimonial">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/99.jpg"
+            />
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Nothing beats a dozen fried Rumbling dumplings after a day of hard
+              work.
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; Mike Silverstone</p>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Section Kitchen -->
+      <section class="section-kitchen">
+        <!-- Container here to make use of its padding, so 'container--kitchen--all' can be smaller and more align with other sections -->
+        <div class="container">
+          <!-- Container grid that contains kitchen heading and kitchen content -->
+          <div class="container--kitchen--all">
+            <!-- Kitchen headings -->
+            <div class="kitchen--heading">
+              <span class="subheading">Kitchen</span>
+              <h2
+                class="heading-secondary margin-bottom-rd letter-spacing font-color-white"
+              >
+                Meet the best dumpling chef in Los Angeles
+              </h2>
+            </div>
+            <!-- Kitchen Content Container -->
+            <div class="kitchen--content">
+              <p class="chef-quote">
+                We take pride in only using the freshest ingredients to make
+                every dumpling. Only the best dumplings are delivered to you and
+                your family. If you are not 100% satisfied, the order is on us.
+              </p>
+              <p class="chef-title">Rumbling Dumpling Master Chef</p>
+              <p class="chef-name"><i>Andrew Loh</i></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Pricing -->
+      <section class="section-pricing" id="pricing">
+        <!-- Pricing heading section -->
+        <div class="container">
+          <span class="subheading">Pricing</span>
+          <h2 class="heading-secondary">
+            Pricing packages that cater to your needs
+          </h2>
+        </div>
+
+        <!-- Pricing Cards segment -->
+        <div class="container grid grid--3-cols margin-bottom-md">
+          <!-- First pricing card -->
+          <div class="pricing-card pricing-card--one">
+            <!-- Pricing card heading -->
+            <header class="package-header">
+              <p class="package-name">1 Pack Order</p>
+              <p class="package-price"><span>$</span>24.99</p>
+              <p class="package-text">per pack, plus delivery fee</p>
+            </header>
+            <!-- Pricing feature bullets -->
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>50 dumplings per pack</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Delivery fee by mileage</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Same day delivery</span>
+              </li>
+            </ul>
+            <!-- Pricing CTA button -->
+            <div class="pricing-btn">
+              <a href="#cta" class="btn btn--cta--pricing">Order now</a>
+            </div>
+          </div>
+
+          <!-- Second pricing card -->
+          <div class="pricing-card pricing-card--five">
+            <!-- Pricing card heading -->
+            <header class="package-header">
+              <p class="package-name">5 Pack Order</p>
+              <p class="package-price"><span>$</span>21.99</p>
+              <p class="package-text">per pack, plus delivery fee</p>
+            </header>
+            <!-- Pricing feature bullets -->
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>50 dumplings per pack</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>$5.99 Flat delivery fee</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Same day delivery</span>
+              </li>
+            </ul>
+            <!-- Pricing CTA button -->
+            <div class="pricing-btn">
+              <a href="#cta" class="btn btn--cta--pricing">Order now</a>
+            </div>
+          </div>
+
+          <!-- Third pricing card -->
+          <div class="pricing-card pricing-card--twenty">
+            <!-- Pricing card heading -->
+            <header class="package-header">
+              <p class="package-name">20 Pack Catering</p>
+              <p class="package-price"><span>$</span>17.99</p>
+              <p class="package-text">per pack, including delivery</p>
+            </header>
+            <!-- Pricing feature bullets -->
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>50 dumplings per pack</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Free delivery</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Pre-order needed</span>
+              </li>
+            </ul>
+            <!-- Pricing CTA button -->
+            <div class="pricing-btn">
+              <a href="#cta" class="btn btn--cta--pricing">Order now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing Note Segment -->
+        <div class="container grid">
+          <aside class="package-note">
+            Prices include all applicable taxes. You can cancel at any time.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Section Call to Action -->
+      <section class="section-cta" id="cta">
+        <!-- Container that contains CTA box (for padding purposes so CTA box is smaller) -->
+        <div class="container">
+          <!-- CTA container (text box and IMG) -->
+          <div class="cta">
+            <!-- CTA text box -->
+            <div class="cta-text-box">
+              <h2 class="heading-secondary">$10 off your first order!</h2>
+              <p class="cta-text">
+                Healthy, tasty dumplings are waiting for you. Sign up to become
+                a member and receive $10 off of your first order!
+              </p>
+
+              <!-- CTA Form -->
+              <form class="cta-form" name="sign-up" netlify>
+                <!-- Full name input container-->
+                <div>
+                  <label for="full-name">Full Name</label>
+                  <input
+                    id="full-name"
+                    type="text"
+                    placeholder="John Doe"
+                    name="full-name"
+                    required
+                  />
+                </div>
+                <!-- Email input container-->
+                <div>
+                  <label for="email">Email Address</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="me@gmail.com"
+                    name="email"
+                    required
+                  />
+                </div>
+                <!-- Select Where did you hear from us input container -->
+                <div>
+                  <label for="select-where">Where did you hear from us?</label>
+                  <select id="select-where" name="select-where" required>
+                    <!-- NOTE: First option is only for displaying; If you choose first option, value is "", so form won't submit! -->
+                    <option value="">Please choose one option:</option>
+                    <option value="friends">Friends and family</option>
+                    <option value="youtube">YouTube video</option>
+                    <option value="Podcast">Podcast</option>
+                    <option value="ad">Facebook ad</option>
+                    <option value="others">Others</option>
+                  </select>
+                </div>
+                <!-- Button to sign up -->
+                <button class="btn btn--form">Sign up now</button>
+              </form>
+            </div>
+
+            <!-- CTA IMG -->
+            <!-- This is an empty div, Img fills it; Img format is only visible in CSS, so have to specify in HTML what this element is/does by setting 'role' & 'aria-label', good practice to keep HTML code readable for all -->
+            <div
+              class="cta-img-box"
+              role="img"
+              aria-label="Customer enjoying food"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Section Footer -->
+    <footer class="footer">
+      <div class="container grid grid--5-cols grid--footer">
+        <!-- Logo col: with social icons -->
+        <div class="logo-col">
+          <!-- Logo -->
+          <a href="#" class="footer-logo">
+            <img
+              class="footer-logo-img"
+              alt="rumbling dumpling logo"
+              src="img/Logo2.1.png"
+            />
+          </a>
+
+          <!-- Social icons: Copy from ion icons-->
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="http://instagram.com">
+                <ion-icon class="social-icon" name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a class="footer-link" href="http://www.facebook.com">
+                <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a class="footer-link" href="http://twitter.com">
+                <ion-icon class="social-icon" name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Copyright message -->
+          <p class="copyright">
+            Copyright &copy; 2022 by Rumbling Dumpling, LLC. All rights
+            reserved.
+          </p>
+        </div>
+
+        <!-- Address col: use <address> element -->
+        <div class="address-col">
+          <p class="footer-heading">Contact us</p>
+          <!-- Address element: By default text is italic -->
+          <address class="contacts">
+            <p class="address">200 W. Grace St., Los Angeles, CA 91005</p>
+            <p>
+              <a class="footer-link" href="tel:323-211-5589">323-211-5589</a
+              ><br />
+              <a class="footer-link" href="mailto:hello@rumblingdumpling.com"
+                >hello@rumblingdumpling.com</a
+              >
+            </p>
+          </address>
+        </div>
+
+        <!-- Nav col 1 -->
+        <nav class="nav-col">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Become member</a></li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="#">iOS app</a></li>
+            <li><a class="footer-link" href="#">Android app</a></li>
+          </ul>
+        </nav>
+
+        <!-- Nav col 2 -->
+        <nav class="nav-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">About us</a></li>
+            <li><a class="footer-link" href="#">For Business</a></li>
+            <li><a class="footer-link" href="#">Careers</a></li>
+          </ul>
+        </nav>
+
+        <!-- Nav col 3 -->
+        <nav class="nav-col">
+          <p class="footer-heading">Resources</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Recipe directory</a></li>
+            <li><a class="footer-link" href="#">Help center</a></li>
+            <li><a class="footer-link" href="#">Privacy & terms</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

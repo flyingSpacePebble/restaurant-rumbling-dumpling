@@ -1,0 +1,531 @@
+/* By defaul 1 rem = 1 em = 16px */
+/* Use em for media query condition (1em=16px), but use rem (not necessarily = 16px) for formats inside the media queries */
+/* Rem inside media queries should be seen as the same rem size as in general.css/style.css */
+
+/* ************************ */
+/* BELOW  1344px (Smaller desktops) */
+/* ************************ */
+
+/* Hero section is 1300px, 1366px is common break pt, so we look for something in between those two points */
+/* Use 1344px / 16 = 84em */
+/* When condition met, hero width will be reduced to match the other sections */
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  /* Make primary heading smaller */
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  1200px (Landscape tablets) */
+/* ************************ */
+
+@media (max-width: 75em) {
+  /* Below applies to whole page */
+  /* By changing html font-size, we change basically everything on the page */
+  html {
+    /* 9px / 16px = 56.25% */
+    font-size: 56.25%;
+  }
+
+  /* NOTE!!: All below are basically all 'additional' reduction on top of the above font-size change, (in addition to the font-size change from 1rem=10px to 1rem=9px) */
+
+  /* Reduce grid gaps (Note already reduced by above code)*/
+  /* Based on above and below, now column-gap is 4.8*9 px, row is 6.4*9 px */
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  /* headings are still too large even with font-size reduced above, so reduce them further */
+  /* Note font-size already shrinked by above code */
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  /* Make header padding smaller to align logo with sections (3.2rem padding) */
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  /* Reduce nav item spaces */
+  .main-nav-list {
+    gap: 2.4rem;
+  }
+
+  /* Reduce the gap in hero to make image more centered */
+  .hero {
+    gap: 4.8rem;
+  }
+
+  /* Reduce kitchen padding, make it look wider */
+  /* NOTE: kitchen container already has 3.2rem; so 0rem here just means there's still 3.2rem padding to the sides of screen */
+  .section-kitchen {
+    padding: 0rem;
+  }
+
+  .grid--footer {
+    column-gap: 3.2rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  1040px (Tablets)  */
+/* ************************ */
+
+@media (max-width: 65em) {
+  html {
+    /* 8px / 16px = 50% */
+    font-size: 50%;
+  }
+
+  /* You can change pseudo elements just like regular elements */
+  /* Change the band format to top band */
+  /* NOTE: if setting both left/right = 0%, then extra parts of the band will be cut off (i.e. it'll start at left and start at right at the same time) */
+  .pricing-card--five::after {
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    text-align: center;
+    padding: 0.6rem 4rem;
+    transform: rotate(0deg);
+  }
+
+  .pricing-card--twenty::after {
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    text-align: center;
+    padding: 0.6rem 4rem;
+    transform: rotate(0deg);
+  }
+}
+
+/* ************************ */
+/* BELOW  960px (Tablets)   ALSO ADDING MOBILE FORMATS!! */
+/* ************************ */
+
+@media (max-width: 60em) {
+  /* Reduce hero grid col to single col */
+  /* NOTE: the grid items are now aligned top/bottom (instead of left-right); Gap also becomes vertical gap */
+  .hero {
+    grid-template-columns: 1fr;
+    /* Increase the padding here so texts don't go too much to the sides */
+    padding: 0 16rem;
+    /* Increase the gap now as the gap becomes a vertical gap */
+    /* Note in the previous media query, gap was reduced to 4.8rem, here make it bigger */
+    gap: 7.6rem;
+  }
+
+  /* Reduce hero img box size */
+  .hero-img-box {
+    width: 60%;
+    justify-self: center;
+  }
+
+  /* Align the texts centered */
+  /* NOTE: This elements were not in CSS before, you can add them here! */
+  .hero-text-box {
+    text-align: center;
+  }
+
+  /* Justify flex content (items) to the center of flexbox */
+  /* Reduce margin-top */
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 4.8rem;
+  }
+
+  /* Featured in logos reduce in size */
+  .featured-logo {
+    width: 10rem;
+  }
+
+  /* Reduce step number */
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  /* Reduce Recipe description padding, so text go wider to fit in line */
+  .recipe-content {
+    padding: 2.4rem 3rem 3.2rem 3rem;
+  }
+
+  .recipe-title {
+    font-size: 2.2rem;
+  }
+
+  .recipe-attribute {
+    font-size: 1.6rem;
+  }
+
+  /* Reduce testimonials col to 2 */
+  .testimonials {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Changing the width ratio of the items, make img bigger */
+  .cta {
+    /* 3/5 = 60% 2/5 = 40% */
+    grid-template-columns: 5fr 4.5fr;
+  }
+
+  /* Change CTA form into 1 col */
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  /* Add margin-top to the cta button on the form */
+  .btn--form {
+    margin-top: 2rem;
+  }
+
+  /* Pricing card reduce padding to fit more content in line*/
+  .pricing-card {
+    padding: 3.2rem;
+  }
+
+  /* Below Pricing classes, shrink the fonts */
+  .package-name {
+    font-size: 1.4rem;
+  }
+
+  .package-price {
+    font-size: 4.6rem;
+  }
+
+  .package-price span {
+    font-size: 2.4rem;
+  }
+
+  .package-text {
+    font-size: 1.4rem;
+  }
+
+  /* pricing section -- li element */
+  .list-item {
+    font-size: 1.4rem;
+  }
+
+  /* Change footer grid to 6 columns as top row needs 3 col and bottom only needs 2 */
+  /* Make top row's items span 2 cells each, and bottom row's items span 3 cells each */
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Move all 3 nav-columns in footer to the top grid row */
+  /* Set them to each span 2 grid cells (6 cells total) */
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+
+  /* Set logo and address columns to each span 3 grid cells (6 cells total) */
+  /* They are now on the second row */
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  /* /////////////////////////////////// */
+  /* FOR MOBILE NAVIGATION */
+
+  /* menu button shows up */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  /* FOR MOBILE: Change main-nav bar to an expanded menu screen on the right size of screen and hidden, only activated by menu button click */
+  .main-nav {
+    background-color: #fff;
+
+    /* NOTE: Set parent element 'header' to relative, don't set body, if body is set as relative, effects might not work */
+    position: absolute;
+
+    /* Start element from viewport top left */
+    top: 0;
+    left: 0;
+    /* 100% viewport width */
+    width: 100%;
+    /* 100% viewport height, regardless of how you change viewport  (as long as width is <= 60em) */
+    height: 100vh;
+
+    /* Set the expanded nav to the side of the viewport (hidden and cannot be scrolled to) when media query applies */
+    /* Now if nav-open is added, the expanded nav will 'slide in' from the right side as transition was added */
+    /* Because in .nav-open .main-nav (below), transform: translate(0) is written */
+    transform: translateX(100%);
+
+    /* Centering the ul element (main-nav-list) by using flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Transition: ease in: first slow, then fast */
+    transition: all 0.5s ease-in;
+
+    /* Hide main-nav by default (meaning when media query applies as viewport shrinks), only appear upon menu button click */
+    /* ////Below DOESN"T ALLOW TRANSITION, don't use! */
+    /* ////display: none */
+
+    /* Correct way to hide w/o using display: none */
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to keyboard/mouse */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  /* Change the ul flex direction to column, restore the gap to 4.8 (now vertical) as previous query reduced the horizontal gap to 2.4rem */
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  /* Enlarge the li items' font size */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  /* ! Below 3 'nav-open' formats will NOT apply to its child elements if 'nav-open' class isnt' present in HTML (which it isn't upon media query);  */
+  /* Basically: When media query applies, below syntax will be added, but nothing changes on screen; Only when 'nav-open' is added to 'header' element (by JS), then below format will be applied to .main-nav (i.e. expanded nav sliding in from right side), also the icons */
+
+  /* HTML: <header class="header nav-open"> */
+  /* IMPORTANT: If nav-open class is present (added) to header element (by JS), below format will be applied to header */
+  /*            If nav-open class is removed, below element cannot be found on the html, therefore, format won't apply */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    /* Translate the expanded nav back to the original place to cover the viewport */
+    /* Now if nav-open is added, the nav will 'slide in' from the right side as transition was added */
+    transform: translate(0);
+  }
+
+  /* Show the 'X' sign when 'nav-open' class is added in HTML */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  /* Hide the 'menu' button when 'nav-open' class is added in HTML */
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/* ************************ */
+/* BELOW  800px (Smaller Tablets) 
+/* ************************ */
+
+/* Reduce heading-secondary margin */
+@media (max-width: 50em) {
+  .heading-secondary {
+    margin-bottom: 7.2rem;
+  }
+
+  .grid {
+    column-gap: 2.4rem;
+  }
+
+  /* Change left/right ratio of grids for kitchen */
+  .container--kitchen--all {
+    grid-template-columns: 1fr 0.9fr;
+  }
+
+  /* reduce line height */
+  .kitchen--content {
+    line-height: 1.8;
+  }
+}
+
+/* ************************ */
+/* BELOW  704px (Smaller Tablets And Phones)
+/*NOTE: Smaller tablets and Phones should have different queries if possible  */
+/*NOTE: But it depends on the situation; In this situation, once it's below 704px, all grids reduce to 1 col */
+/* ************************ */
+
+@media (max-width: 44em) {
+  /* Change all grids to 1 col */
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce the row gaps now, no more column gaps */
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  /* Decrease bottom paddings to fit phone size */
+  .section-hero {
+    padding: 4.8rem 0 7.2rem 0;
+  }
+
+  /* Decrease hero padding so hero buttons appear better*/
+  .hero {
+    padding: 0 4.8rem;
+  }
+
+  /* Enlarge hero img size as it's only 1 column now */
+  .hero-img-box {
+    width: 75%;
+  }
+
+  /* Featured in logos reduce in size */
+  .featured-logo {
+    width: 8.4rem;
+  }
+
+  /* Have to manually set height to img; otherwise img disappears */
+  .step-img-box {
+    height: 26rem;
+
+    /* move img up a little so closer to the step it belongs */
+    transform: translateY(-1.4rem);
+  }
+
+  .step-img-box-2 {
+    grid-row: 4;
+  }
+
+  /* Reduce padding to align with other sections */
+  .section-testimonials {
+    padding: 9.6rem 3.2rem;
+  }
+
+  /* Reduce testimonials col to 1 */
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce recipe width */
+  .recipe {
+    width: 60%;
+    justify-self: center;
+  }
+
+  /* Change kitchen heading to left side to make sure face is shown */
+  .kitchen--heading {
+    grid-column: 1 / 2;
+    text-align: start;
+    grid-row: 1;
+  }
+
+  /* As above moves, below content item should specify row 2 */
+  .kitchen--content {
+    grid-row: 2;
+  }
+
+  /* Reduce pricing card width */
+  .pricing-card {
+    width: 55%;
+    justify-self: center;
+    /* increase top/bottom padding, keep left/right same */
+    padding: 6.4rem 4.8rem;
+  }
+
+  /* Reduce cta width (keep top bottom same) */
+  .section-cta {
+    /* top right bottom left */
+    padding: 4.8rem 3.2rem 12.8rem 3.2rem;
+  }
+
+  /* Reduce cta to 1 col */
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  /* Manually set img height, otherwise img disappears with 1 col */
+  .cta-img-box {
+    height: 32rem;
+    /* move img to top of cta form */
+    grid-row: 1;
+  }
+
+  .footer {
+    padding: 9.6rem 0;
+  }
+}
+
+/* ************************ */
+/* FIXING Safari flexbox gap 
+/* ************************ */
+
+/* Since some Safari browsers don't support gap property for flexbox, we have to manually add the gap properties to the flexboxes in the code */
+/* If browser support not found for flexbox gap, below code will be added; The control is in Javascript */
+/* NOTE: Add below pre-written code */
+/* NOTE: Have to make sure the margin for each element below matches with the margin in the actual CSS properties */
+/* NOTE: OK to add media queries again (same width) */
+/* NOTE: Below gap should be added to all elements that are not the last element of the flex, so no gap added after the last element */
+
+/* How to add: check all the 'gap' of all css properties, focus on the flexbox containers only, and add the margins accordingly to the flexbox's child elements */
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 3.2rem;
+}
+
+.no-flexbox-gap .delivered-imgs {
+  margin-right: 1.8rem;
+}
+
+.no-flexbox-gap .tag:not(:last-child) {
+  margin-right: 0.4rem;
+}
+
+.no-flexbox-gap .recipe-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .recipe-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 2.4rem;
+  }
+}
+
+@media (max-width: 60em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
+
+/* 
+- Font sizes
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+
+- Spacing system 
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 72 / 80 / 96 / 128  
+*/
